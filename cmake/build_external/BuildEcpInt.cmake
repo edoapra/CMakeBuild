@@ -10,8 +10,8 @@ ExternalProject_Add(EcpInt_External
 )
 else()
 ExternalProject_Add(EcpInt_External
-    GIT_REPOSITORY https://github.com/robashaw/libecpint.git
-    GIT_TAG ${ECPINT_GIT_TAG}
+    GIT_REPOSITORY https://github.com/dmejiar/libecpint.git
+    GIT_TAG master
     UPDATE_DISCONNECTED 1
     CMAKE_ARGS ${DEPENDENCY_CMAKE_OPTIONS} -DLIBECPINT_BUILD_TESTS=OFF -DLIBECPINT_USE_PUGIXML=OFF
     INSTALL_COMMAND ${CMAKE_MAKE_PROGRAM} install DESTDIR=${STAGE_DIR}
