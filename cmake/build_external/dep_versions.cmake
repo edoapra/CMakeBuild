@@ -22,7 +22,7 @@ endif()
 set(SPDLOG_GIT_TAG v1.15.2)
 
 # BLIS
-set(BLIS_GIT_TAG 5d9e110a2aa58b6e5d131db9131bae0143f22f9f) #April 7, 2025
+set(BLIS_GIT_TAG 061c2ebef87eda9189e6cdf38af4ea3d4a8efe7b) #July 10, 2026
 if(ENABLE_DEV_MODE)
   set(BLIS_GIT_TAG master)
 endif()
@@ -31,13 +31,13 @@ endif()
 set(OpenBLAS_GIT_TAG 0.3.34)
 
 # LAPACK
-set(LAPACK_GIT_TAG 67f9279da4d004b3e998d6fb63ef75c4fbbf7355) #Dec 2, 2025
+set(LAPACK_GIT_TAG 51b349470b3b26c948d068deb45c9b120a47ed32) #Aug 6, 2025
 if(ENABLE_DEV_MODE)
   set(LAPACK_GIT_TAG master)
 endif()
 
 # ScaLAPACK
-set(SL_GIT_TAG 46d1837e0f6f20aed6c94dcc5033b60844c7a3c8) #Oct 23, 2025
+set(SL_GIT_TAG 7c58f784e4156d7b98bd0f154a69e5c2521e4a07) #July 10, 2025
 if(ENABLE_DEV_MODE)
   set(SL_GIT_TAG master)
 endif()
@@ -53,7 +53,7 @@ if(ENABLE_DEV_MODE)
 endif()
 
 # Global Arrays
-set(GA_GIT_TAG a0af63f9235bde86e88ae14e9a78178bba3fb1b0) #April 10,2026
+set(GA_GIT_TAG 635d6b341faf928cb5a0cddc38b1a0cbbc2b5bc4) #Aug 12,2026
 if(ENABLE_DEV_MODE)
   set(GA_GIT_TAG develop)
 endif()
@@ -65,7 +65,7 @@ if(ENABLE_DEV_MODE)
 endif()
 
 # Librett
-set(LIBRETT_GIT_TAG 7e69731d3864304bba8ac4a1c5c4b243f36e5747) #June 25, 2025
+set(LIBRETT_GIT_TAG 45e83e1028fb722143b2d33a094be0e683af090b) #Aug 12, 2026
 if(ENABLE_DEV_MODE)
   set(LIBRETT_GIT_TAG master)
 endif()
@@ -74,24 +74,24 @@ endif()
 set(CMSB_LIBINT_VERSION 2.11.2) #2.9.0 is min
 
 # LibEcpInt
-set(ECPINT_GIT_TAG 95203c68d1bb4134a235480d8c69c3014faaccf9)
+set(ECPINT_GIT_TAG 95203c68d1bb4134a235480d8c69c3014faaccf9) #June 20, 2026
 if(ENABLE_DEV_MODE)
   set(ECPINT_GIT_TAG master)
 endif()
 
 # GauXC
-set(GXC_GIT_TAG 0319e71c5a5557e2380afd2b8a9dba7853130f41) #Oct 28, 2025
+set(GXC_GIT_TAG 162e4562552323a871af17ae4acd73b71071bd24) #Aug 10, 2026
 if(ENABLE_DEV_MODE)
     set(GXC_GIT_TAG master)
 endif()
 
 #NWQ-Sim
-set(NWQSIM_GIT_TAG 1a4f3c49fd7277649b37eb623bd2f4622cb32cdb) #Jan 22, 2026
+set(NWQSIM_GIT_TAG b35763d846e6512ed817d3f88ac8ce79a7e82a7e) #April 17, 2026
 if(ENABLE_DEV_MODE)
   set(NWQSIM_GIT_TAG main)
 endif()
 
-set(PYBIND_GIT_TAG v3.0.3)
+set(PYBIND_GIT_TAG v3.1.0)
 if(ENABLE_DEV_MODE)
   set(PYBIND_GIT_TAG master)
 endif()
