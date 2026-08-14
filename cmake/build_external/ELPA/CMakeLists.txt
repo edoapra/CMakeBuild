@@ -118,7 +118,7 @@ if(${CMSB_PROJECTS}_HAS_CUDA)
   find_package(CUDAToolkit REQUIRED)
   get_filename_component(__cuda_install_prefix "${CUDAToolkit_INCLUDE_DIRS}/.." ABSOLUTE)
   #TODO: fix -lstdc++
-  set(ELPA_LINALG "LDFLAGS=${elpa_scalapack_libs} ${elpa_lapack_libs} ${elpa_blas_libs} ${elpa_mpi_libs} ${ELPA_CRAY_DYN} -lcublasLt -lstdc++")
+  set(ELPA_LINALG "LDFLAGS=${elpa_scalapack_libs} ${elpa_lapack_libs} ${elpa_blas_libs} ${elpa_mpi_libs} ${ELPA_CRAY_DYN} -L${CUDAToolkit_LIBRARY_DIR} -lcudart -lcublas -lcublasLt -lcusolver -lstdc++")
   set(ELPA_GPU --disable-c-tests --disable-cpp-tests --enable-nvidia-gpu-kernels --with-NVIDIA-GPU-compute-capability=sm_${GPU_ARCH}  --with-cuda-path=${__cuda_install_prefix})
 endif()
 
