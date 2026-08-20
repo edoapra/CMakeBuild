@@ -101,7 +101,8 @@ ExternalProject_Add(BLAS_External
                                       ${OPENBLAS_TARGET_ARCH}
                                       -DBUILD_TESTING=OFF
                                       -DBUILD_WITHOUT_CBLAS=ON
-                                      -DINTERFACE64=${OB_INT8}
+                                      -DINTERFACE64=${OB_INT8}#			      -DDYNAMIC_ARCH=ON
+				      -DTARGET=HASWELL
         INSTALL_COMMAND ${CMAKE_MAKE_PROGRAM} install #DESTDIR=${STAGE_DIR}
         BUILD_IN_SOURCE 1
 )
@@ -112,7 +113,8 @@ ExternalProject_Add(BLAS_External
                                       -DBUILD_WITHOUT_LAPACK=ON
                                       ${OPENBLAS_TARGET_ARCH}
                                       -DBUILD_TESTING=OFF
-                                      -DBUILD_WITHOUT_CBLAS=ON
+                                      -DBUILD_WITHOUT_CBLAS=ON # -DDYNAMIC_ARCH=ON
+				      -DTARGET=HASWELL
                                       -DINTERFACE64=${OB_INT8}
         INSTALL_COMMAND ${CMAKE_MAKE_PROGRAM} install #DESTDIR=${STAGE_DIR}
         BUILD_IN_SOURCE 1
