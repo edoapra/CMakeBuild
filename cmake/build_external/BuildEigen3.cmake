@@ -12,7 +12,7 @@ endif()
 #     path/URL to one. No revision is checked out, so GIT_TAG does not apply.
 is_valid_and_true(EIGEN_URL __eu_set)
 if(NOT __eu_set)
-  set(EIGEN_URL https://gitlab.com/libeigen/eigen.git)
+  set(EIGEN_URL https://github.com/eigen-mirror/eigen)
 endif()
 
 if(EIGEN_URL MATCHES "\\.(tar|tar\\.gz|tgz|tar\\.xz|tar\\.bz2|tar\\.zst|zip)$")
@@ -20,6 +20,9 @@ if(EIGEN_URL MATCHES "\\.(tar|tar\\.gz|tgz|tar\\.xz|tar\\.bz2|tar\\.zst|zip)$")
 else()
   set(EIGEN_FETCH_ARGS GIT_REPOSITORY ${EIGEN_URL} GIT_TAG ${EIGEN_GIT_TAG} UPDATE_DISCONNECTED 1)
 endif()
+# append platform-specific optimization options for non-Debug builds
+set(EIGEN3_EXTRA_FLAGS "-DEIGEN_MAX_STATIC_ALIGN_BYTES=32")
+set(CXX_FLAGS_INIT "${CMAKE_CXX_FLAGS_INIT} ${EIGEN3_EXTRA_FLAGS}")
 
 if(ENABLE_OFFLINE_BUILD)
 ExternalProject_Add(Eigen3_External
@@ -30,7 +33,7 @@ ExternalProject_Add(Eigen3_External
 else()
 ExternalProject_Add(Eigen3_External
     ${EIGEN_FETCH_ARGS}
-    CMAKE_ARGS ${DEPENDENCY_CMAKE_OPTIONS}
+    CMAKE_ARGS ${DEPENDENCY_CMAKE_OPTIONS} -DCMAKE_CXX_FLAGS_INIT=${CXX_FLAGS_INIT}
         INSTALL_COMMAND ${CMAKE_MAKE_PROGRAM} install #DESTDIR=${STAGE_DIR}
     )
 endif()
