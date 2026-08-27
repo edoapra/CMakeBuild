@@ -53,7 +53,7 @@ if(ENABLE_DEV_MODE)
 endif()
 
 # Global Arrays
-set(GA_GIT_TAG 635d6b341faf928cb5a0cddc38b1a0cbbc2b5bc4) #Aug 12,2026
+set(GA_GIT_TAG 843923e3b263fbccf97023da92b93263ee9b670e) #Aug 27, 2026
 if(ENABLE_DEV_MODE)
   set(GA_GIT_TAG develop)
 endif()
