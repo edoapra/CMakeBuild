@@ -14,9 +14,9 @@ include(${CMAKE_CURRENT_LIST_DIR}/dep_versions.cmake)
         set(GA_RUNTIME MPI_PROGRESS_RANK)
     endif()
 
-    is_valid_and_true(GA_REPO __set)
+    is_valid_and_true(GA_URL __set)
     if (NOT __set)
-      set(GA_REPO "https://github.com/GlobalArrays/ga.git")
+      set(GA_URL "https://github.com/GlobalArrays/ga.git")
     endif()
 
     is_valid_and_true(GA_TAG __set)
@@ -149,7 +149,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/dep_versions.cmake)
     else()
     ExternalProject_Add(GlobalArrays_External
         # URL https://github.com/GlobalArrays/ga/releases/download/v${PROJECT_VERSION}/ga-${PROJECT_VERSION}.tar.gz
-        GIT_REPOSITORY ${GA_REPO}
+        GIT_REPOSITORY ${GA_URL}
         GIT_TAG ${GA_GIT_TAG}
         UPDATE_DISCONNECTED 1
         CMAKE_ARGS ${DEPENDENCY_CMAKE_OPTIONS} -DENABLE_BLAS=ON -DLINALG_VENDOR=${LINALG_VENDOR} ${GA_LINALG_ROOT} 

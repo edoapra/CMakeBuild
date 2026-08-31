@@ -10,12 +10,12 @@ if(${PROJECT_NAME} STREQUAL "TestBuildLibInt")
     set(TEST_LIBINT TRUE)
 endif()
 
-is_valid_and_true(LIBINT_TAR_URL __set)
+is_valid_and_true(LIBINT_URL __set)
 if (NOT __set)
-    set(LIBINT_TAR_URL https://github.com/ExaChem/exachem-support/raw/refs/heads/main/libint/libint-${CMSB_LIBINT_VERSION}.tar.xz)
+    set(LIBINT_URL https://github.com/ExaChem/exachem-support/raw/refs/heads/main/libint/libint-${CMSB_LIBINT_VERSION}.tar.xz)
 endif()
 
-set(LIBINT_TAR ${LIBINT_TAR_URL})
+set(LIBINT_TAR ${LIBINT_URL})
 
 # append platform-specific optimization options for non-Debug builds
 set(LIBINT_EXTRA_FLAGS "-Wno-unused-variable")
